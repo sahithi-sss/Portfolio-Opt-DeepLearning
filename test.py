@@ -4,14 +4,14 @@ import time
 import random
 from datetime import datetime, timedelta
 
-def daterange(start_date, end_date, delta_years=3):
+def daterange(start_date, end_date, delta_years=2):
     current = start_date
     while current < end_date:
         next_date = current + timedelta(days=365 * delta_years)
         yield current, min(next_date, end_date)
         current = next_date
 
-def fetch_data_with_retries(ticker, start, end, retries=3, sleep_min=10, sleep_max=15):
+def fetch_data_with_retries(ticker, start, end, retries=10, sleep_min=10, sleep_max=15):
     for attempt in range(retries):
         try:
             data = yf.download(ticker, start=start, end=end, auto_adjust=False)
@@ -25,9 +25,9 @@ def fetch_data_with_retries(ticker, start, end, retries=3, sleep_min=10, sleep_m
     print(f"Failed to fetch data for {start} to {end} after {retries} attempts.")
     return None
 
-ticker = "VTI"
-start = datetime(2006, 1, 12)
-end = datetime(2019, 12, 31)
+ticker = "AGG"
+start = datetime(2006, 4, 1)
+end = datetime(2020, 4, 30)
 
 all_data = []
 
@@ -42,7 +42,7 @@ for start_chunk, end_chunk in daterange(start, end):
 # Combine and export
 if all_data:
     final_df = pd.concat(all_data, ignore_index=True)
-    final_df.to_csv("VTI_historical_OHLCV.csv", index=False)
-    print("✅ All data saved to VTI_historical_OHLCV.csv")
+    final_df.to_csv("AGG_historical_OHLCV.csv", index=False)
+    print("✅ All data saved to AGG_historical_OHLCV.csv")
 else:
     print("❌ No data was downloaded.")
