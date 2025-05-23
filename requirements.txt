@@ -3,6 +3,7 @@ numpy>=1.24.0
 pandas>=2.0.0
 tensorflow>=2.15.0
 matplotlib>=3.7.0
+yfinance>=0.2.36
 
 # Jupyter and development tools
 jupyter>=1.0.0
