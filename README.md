@@ -25,6 +25,7 @@ This project is designed for financial analysts, researchers, and students inter
 
 ## 🌟 Features
 
+- **Automated Data Collection**: Robust data fetching with retry mechanism and chunked downloads
 - **Deep Learning Model**: LSTM-based neural network for dynamic portfolio allocation
 - **Multiple Asset Classes**: Support for stocks (VTI), bonds (AGG), commodities (DBC), and volatility (VIX)
 - **Fixed Allocation Strategies**: Four different static allocation methods for comparison
@@ -42,6 +43,7 @@ This project is designed for financial analysts, researchers, and students inter
 - **Pandas**: For data manipulation and analysis
 - **Matplotlib**: For data visualization
 - **Jupyter Notebooks**: For interactive development and analysis
+- **yfinance**: For historical market data collection
 
 ---
 
@@ -50,8 +52,8 @@ This project is designed for financial analysts, researchers, and students inter
 1. **Clone the Repository**
 
 ```bash
-git clone <your-repository-url>
-cd <repository-name>
+git clone https://github.com/sahithi-sss/Portfolio-Opt-DeepLearning
+cd Portfolio-Opt-DeepLearning
 ```
 
 2. **Create a Virtual Environment (Recommended)**
@@ -71,15 +73,20 @@ pip install -r requirements.txt
 
 ## 🔍 Usage
 
-1. **Data Preprocessing**
+1. **Data Collection**
+   - Run `data_collection.py` to fetch historical data for each asset
+   - The script handles data collection in chunks with retry mechanism
+   - Data is saved as CSV files for each asset (e.g., `AGG_historical_OHLCV.csv`)
+
+2. **Data Preprocessing**
    - Run `data_preprocessing.ipynb` to prepare the historical data
    - This will create the necessary input features and target returns
 
-2. **Model Training and Evaluation**
+3. **Model Training and Evaluation**
    - Run `Neural_network.ipynb` to train the deep learning model
    - The model will be trained on historical data and evaluated on test data
 
-3. **Fixed Allocation Analysis**
+4. **Fixed Allocation Analysis**
    - Run `fixed_allocation_algo.ipynb` to evaluate traditional allocation strategies
    - Compare performance metrics with the deep learning approach
 
@@ -90,11 +97,12 @@ pip install -r requirements.txt
 ```plaintext
 project/
 │
-├── data_preprocessing.ipynb     # Data preparation and feature engineering
-├── Neural_network.ipynb         # Deep learning model implementation
-├── fixed_allocation_algo.ipynb  # Traditional allocation strategies
-├── requirements.txt            # Python dependencies
-└── README.md                  # Project documentation
+├── data_collection.py          # Automated data fetching script
+├── data_preprocessing.ipynb    # Data preparation and feature engineering
+├── Neural_network.ipynb        # Deep learning model implementation
+├── fixed_allocation_algo.ipynb # Traditional allocation strategies
+├── requirements.txt           # Python dependencies
+└── README.md                 # Project documentation
 ```
 
 ---
@@ -149,11 +157,9 @@ Contributions are welcome! Please follow these steps:
 
 ## 📧 Contact
 
-[Your Name]  
-[Your GitHub Username] | [Your GitHub Profile URL]
+[Sri Sahitih S]  
+[sahithi-sss] | [https://github.com/sahithi-sss]
 
 ---
 
 > This project is designed for educational and research purposes. The deep learning model represents an experimental approach to portfolio optimization and should be used with appropriate caution in real-world applications. Past performance is not indicative of future results.
-
-This README provides a comprehensive overview of your project, highlighting its key features, implementation details, and usage instructions. The structure follows the example you provided while being specifically tailored to your portfolio optimization project. You can customize the contact information and repository URLs as needed.
