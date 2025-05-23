@@ -1,0 +1,10 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+tensorflow>=2.15.0
+matplotlib>=3.7.0
+
+# Jupyter and development tools
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.0.0
