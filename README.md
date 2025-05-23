@@ -1,6 +1,6 @@
 # 📈 Deep Learning Portfolio Optimization
 
-A **Python-based implementation** of the research paper "Deep-Learning-for-Portfolio-Optimization" that provides advanced tools for portfolio optimization using both traditional and modern approaches:
+A **Python-based implementation** of the research paper "Deep-Learning-for-Portfolio-Optimization" by Zihao Zhang, Stefan Zohren and Stephen Roberts, that provides advanced tools for portfolio optimization using both traditional and modern approaches:
 
 1. **Deep Learning Strategy (DLS)** - A modern deep learning approach using LSTM networks
 2. **Fixed Allocation Strategies** - Traditional portfolio allocation methods
